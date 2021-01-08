@@ -1,0 +1,102 @@
+package videojuegoconHilos;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class MainPrincipal {
+
+	public static void main(String[] args) {
+		
+		
+		
+		
+		Personaje G1 = new Guerrero();
+		Personaje C1 = new Healer();
+		Personaje M1 = new Mago();
+		Arma e1 = new Espada();
+		Arma e2 = new Rezo();
+		Arma e3 = new Arco();
+		Personaje boss = new Boss();
+		Arena fortaleza = new Arena(G1, boss);
+		
+		G1.setNombre("Akiles");
+		G1.setNivel(5);
+		G1.setSalud(200);
+		G1.setIniciativa(5);
+		G1.setArma(e1);
+		e1.setDañomaximo(20);
+		e1.setDañoMinimo(5);
+		
+		
+		C1.setNombre("Tarutaru");
+		C1.setNivel(5);
+		C1.setSalud(200);
+		C1.setIniciativa(5);
+		C1.setArma(e2);
+		e2.setDañomaximo(20);
+		e2.setDañoMinimo(5);
+		
+		M1.setNombre("BlackMage");
+		M1.setNivel(5);
+		M1.setSalud(200);
+		M1.setIniciativa(5);
+		M1.setArma(e3);
+		e3.setDañomaximo(20);
+		e3.setDañoMinimo(5);
+		
+		boss.setNombre("BOSS");
+		boss.setNivel(5);
+		boss.setSalud(2000);
+		boss.setIniciativa(5);
+		boss.setArma(e1);
+		
+		
+		while (boss.getSalud()>0) {
+			
+		
+		List<Personaje> listaPersonajes = new ArrayList<Personaje>();
+		listaPersonajes.add(G1);
+		listaPersonajes.add(C1);
+		listaPersonajes.add(M1);
+		if (G1.getSalud()>0) {
+			listaPersonajes.remove(G1);
+			
+		}else if (C1.getSalud()>0) {
+			listaPersonajes.remove(C1);
+			
+		}else if (M1.getSalud()>0) {
+			listaPersonajes.remove(M1);
+		}
+		
+		
+		int contrincante1 = util.generadornumeros(0, 3);
+		int contrincante2 = 0;
+		do {
+			contrincante2 = util.generadornumeros(0, 3);
+		}while(contrincante1 == contrincante2);
+		
+		
+		
+		
+		Personaje luchador1 = listaPersonajes.get(contrincante1);
+		Personaje luchador2 = boss;
+		
+		Arena combate = new Arena(luchador1, luchador2);
+		Thread t1 = new Thread((Runnable) luchador1);
+		Thread t2 = new Thread((Runnable) luchador1);
+		Thread t3 = new Thread((Runnable) luchador1);
+		
+		t1.start();
+		t2.start();
+		t3.start();
+		
+		
+		Personaje Ganador = combate.combate();
+		System.out.println("Ganador es: "+Ganador.getNombre());
+		
+		}
+		
+	}
+
+}

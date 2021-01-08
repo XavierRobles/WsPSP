@@ -1,0 +1,35 @@
+package videojuegoconHilos;
+
+public class Mago extends Personaje {
+	private int inteligencia;
+
+	@Override
+	public void atacar(Personaje p) {
+		int dañoTotal;
+		if (this.getArma() instanceof Hechizo) {
+			dañoTotal = getArma().usar() + inteligencia;
+
+		} else {
+			dañoTotal = getArma().usar();
+		}
+
+		dañoTotal += getNivel() * 2;
+		System.out.println("Mago hace " + dañoTotal);
+		p.setSalud(p.getSalud() - dañoTotal);
+	}
+
+	public int getInteligencia() {
+		return inteligencia;
+	}
+
+	public void setInteligencia(int inteligencia) {
+		this.inteligencia = inteligencia;
+	}
+
+	@Override
+	public void run() {
+		Arena.combate();
+		
+	}
+
+}

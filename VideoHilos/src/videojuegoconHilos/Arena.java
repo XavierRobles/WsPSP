@@ -1,0 +1,67 @@
+package videojuegoconHilos;
+
+import java.util.Scanner;
+
+public class Arena {
+	private Personaje boss;
+	private static Personaje p;
+
+	public Personaje getBoss() {
+		return boss;
+	}
+
+	public void setBoss(Personaje boss) {
+		this.boss = boss;
+	}
+
+	public Arena(Personaje boss) {
+		this.boss = boss;
+
+	}
+
+	public synchronized void combate(Personaje p) {
+		Personaje ganador = null;
+		Personaje pi = null;
+		Personaje pf = null;
+		if (p.getIniciativa() >= boss.getIniciativa()) {
+			pi = p;
+			pf = boss;
+
+		} else {
+			pi = boss;
+			pf = p;
+		}
+
+		System.out.println("inicia combate " + pi.getNombre());
+
+		Scanner sc = new Scanner(System.in);
+
+		do {
+
+			pi.atacar(pf);
+			if (pf.getSalud() <= 0) {
+
+				ganador = pi;
+
+			}
+			pf.atacar(pi);
+
+			if (pi.getSalud() <= 0) {
+
+				ganador = pf;
+
+			}
+
+			System.out.println("puntos de vida de  " + pi.getNombre());
+			System.out.println(pi.getSalud());
+			System.out.println("puntos de vida de  " + pf.getNombre());
+			System.out.println(pf.getSalud());
+
+//			System.out.println("Siguiente turno pulse enter");
+//			System.out.println();
+//			sc.nextLine();
+		} while (pi.getSalud() > 0 && pf.getSalud() > 0);
+		System.out.println("Ganador es: " + ganador.getNombre());
+	}
+
+}

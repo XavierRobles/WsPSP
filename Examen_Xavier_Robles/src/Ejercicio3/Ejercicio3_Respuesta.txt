@@ -1,0 +1,7 @@
+¿La siguiente frase sería correcta o incorrecta? 
+Justifica tu respuesta.
+“Cuando un método esta sincronizado, cualquier hilo que intente acceder a 
+él se parará y no entrará en el método en caso de que haya otro hilo dentro ejecutándose”
+
+Es correcta, con sincronizado nos permite hacer que los hilos que van detras del primero que llega tendran que esperar
+a que finalize el meto para poder entrar, si lo quitamos, entrarian todos al mismo tiempo.

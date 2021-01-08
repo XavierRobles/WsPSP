@@ -1,0 +1,32 @@
+
+public class Healer extends Personaje{
+	private int sabiduria;
+
+	
+	@Override
+	public void atacar(Personaje p) {
+		int dañoTotal;
+		if (this.getArma() instanceof Rezo) {
+			 dañoTotal = getArma().usar() + sabiduria;
+			 int curacion = (int)Math.round(dañoTotal * 0.1);
+			 this.setSalud(this.getSalud()+ curacion;
+			
+		}else {
+			dañoTotal = getArma().usar();
+		}
+		
+		dañoTotal = getArma().usar()*2;
+		p.setSalud(p.getSalud() - dañoTotal);
+	}
+
+
+	public int getSabiduria() {
+		return sabiduria;
+	}
+
+
+	public void setSabiduria(int sabiduria) {
+		this.sabiduria = sabiduria;
+	}
+	
+}

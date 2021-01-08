@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+import com.sun.xml.internal.stream.Entity.ScannedEntity;
+
+public class Arena {
+
+	private Personaje p1;
+	private Personaje p2;
+
+	public Arena(Personaje p1, Personaje p2) {
+		this.p1 = p1;
+		this.p2 = p2;
+
+	}
+
+	public Personaje combate() {
+		Personaje ganador = null;
+		boolean acabado = false;
+		
+			Personaje pi = null;
+			Personaje pf = null;
+			if (p1.getIniciativa()>= p2.getIniciativa()) {
+				pi = p1;
+				pf = p2;
+				
+			}else {
+				pi = p2;
+				pf = p1;
+			}
+			
+			System.out.println("inicia combate "+ pi.getNombre());
+			
+			Scanner sc = new Scanner(System.in);
+			
+			do {
+			
+				pi.atacar(pf);
+				if (pf.getSalud() <= 0) {
+					
+					return pi;
+					
+				} 
+					pf.atacar(pi);
+				
+				
+				if (pi.getSalud() <= 0) {
+					
+					return pf;
+					
+				} 
+					
+				
+				
+				
+			System.out.println("Siguiente truno pulse enter");
+			System.out.println();
+		} while (true);
+		
+		
+	}
+
+}

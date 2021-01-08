@@ -1,0 +1,15 @@
+
+public class Hechizo extends Arma{
+
+	@Override
+	public int usar() {
+int dañoGeneral = super.usar();
+
+int numeroAleatorio = util.generadornumeros(1, 100);
+		return super.usar();
+		
+	}
+
+	
+	
+}

@@ -1,0 +1,12 @@
+
+public class MainPrincipal {
+
+	public static void main(String[] args) {
+
+		Personaje G1 = new Guerrero();
+		Personaje M1 = new Mago();
+		Personaje C1 = new Healer();
+		
+	}
+
+}

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Personajes -->
+	<!-- Guerreo -->
+
+	<bean class="Personajes.Guerrero" id="G1">
+		<property name="nombre" value="Conan"></property>
+		<property name="rol" value=" Soy el Gerrero!!! "></property>
+		<property name="fraseataque" value="ARGGGGGGG!!!"></property>
+		<property name="salud" value="1200"></property>
+		<property name="mana" value="100"></property>
+		<property name="arma" ref="e1"></property>
+	</bean>
+
+
+	<!-- Arquero -->
+	<bean class="Personajes.Arquero" id="A1">
+		<property name="nombre" value="Legolas"></property>
+		<property name="rol" value=" Soy el Arquero "></property>
+		<property name="fraseataque" value="Donde pongo el ojo....!!!"></property>
+		<property name="salud" value="1000"></property>
+		<property name="mana" value="100"></property>
+		<property name="arma" ref="e2"></property>
+	</bean>
+	<!-- Mago -->
+
+	<bean class="Personajes.Mago" id="M1">
+		<property name="nombre" value="Gandalf"></property>
+		<property name="rol" value=" Soy el Mago "></property>
+		<property name="fraseataque" value="NOOOO PASARAAAAAAS!!!"></property>
+		<property name="salud" value="800"></property>
+		<property name="mana" value="1000"></property>
+		<property name="arma" ref="e3"></property>
+	</bean>
+
+	<!-- Curandero -->
+	<bean class="Personajes.Curandero" id="C1">
+		<property name="nombre" value="Yenia"></property>
+		<property name="rol" value=" Soy la Curandera!!! "></property>
+		<property name="fraseataque" value="Que Gaia te destruya!!!!"></property>
+		<property name="salud" value="800"></property>
+		<property name="mana" value="1200"></property>
+		<property name="arma" ref="e4"></property>
+	</bean>
+
+
+	<!-- Armas -->
+	
+	<!-- Espada -->
+
+	<bean class="Armas.Espada" id="e1">
+	<property name="tipoataque" value="Tipo de ataque => Fisico"></property>
+	<property name="efectosonoro" value="Clins!! clins jiis!!!"></property>
+	<property name="daño" value="40"></property>
+	</bean>
+	
+	<!-- Arco -->
+	
+	<bean class="Armas.Arco" id="e2">
+	<property name="tipoataque" value="Tipo de ataque => Perforante"></property>
+	<property name="efectosonoro" value="Chiiiiiuuuu"></property>
+	<property name="daño" value="30"></property>
+	</bean>
+	
+	
+	<!-- Varita -->
+	
+	<bean class="Armas.Varita" id="e3">
+	<property name="tipoataque" value="Tipo de ataque => Magia negra"></property>
+	<property name="efectosonoro" value="Flugggfluflufluggggggg"></property>
+	<property name="daño" value="90"></property>
+	
+	</bean>
+	
+	<!-- Baston -->
+	
+	
+	<bean class="Armas.Baston" id="e4">
+	<property name="tipoataque" value="Tipo de ataque => Magia blanca"></property>
+	<property name="efectosonoro" value="TiliTiliLiNNN!!!"></property>
+	<property name="daño" value="70"></property>
+	
+	
+	</bean>
+	
+	
+	
+	
+</beans>
+<!-- context = new ClassPathXmlApplicationContext("Recursos/context.xml"); 
+	Este fichero servira para dar de alta todos nuestro objetos en el contexto 
+	de spring, Los objetos que creamos con new se daran de alta en JVM, mientras 
+	que los objetos dados de alta aqui se daran en el contexto de spring los 
+	objetos dados de alta en el contexto de spring son comunmente llamados "bean" 
+	para crear un objeto en spring usaremos la etiqueta bean para crear un objeto 
+	de spring usaremos la etiqueta property para darle dos atributos, a la clase 
+	y un id que debe ser unico el ciclo de vida de los spring singleton y su 
+	duracion sera de toda la ejecucion del programa Podemos inicializar objetos 
+	con valores por defecto siempre y cuando tengan getters y setters <bean class="entidad.Persona" 
+	id="persona1"></bean> <bean class="entidad.Persona" id="persona2"> <property 
+	name="nombre" value="felix"></property> <property name="edad" value="89"></property> 
+	<property name="peso" value="754.5"></property> </bean> hay casos en los 
+	que queremos crear objetos a demanda a peticion es decir que los objetos 
+	no esten creados de antemano para ello tenemos el prototype este tipo de 
+	alcance tenemos un objeto de base o modelo de cual se crean todos los demas 
+	a peticion. pero ojo dichos objetos no son getionados por spring <bean id="personaPrototype" 
+	class="entidad.Persona" scope="prototype"> <property name="edad" value="18"></property> 
+	</bean> <bean id="listaPersonas" class="java.util.ArrayList" scope="singleton"></bean> 
+	El objeto persona tiene como dependencia ahora una direccion, asi que ahora 
+	tenemos que inyectarselo (id)Inyeccion de dependencia <bean id="direccionPersona1" 
+	class="entidad.Direccion"> <property name="tipoVia" value="Calle"></property> 
+	<property name="nombreVia" value="el euro"></property> <property name="Ciudad" 
+	value="Alcanfran"></property> </bean> <bean id="persona3" class="entidad.Persona"> 
+	<property name="nombre" value="Rompetechos"></property> <property name="edad" 
+	value="45"></property> <property name="peso" value="52"></property> <property 
+	name="direccion" ref="direccionPersona1"></property> </bean> </beans> Persona 
+	p1 = (Persona) context.getBean("persona1"); p1.setNombre("Xavier"); p1.setEdad(21); 
+	p1.setPeso(80.1); Persona p3 = context.getBean("personaPrototype", Persona.class); 
+	p3.setNombre("Gandaf"); p3.setEdad(45); p3.setPeso(80); System.out.println(p3.getNombre()); 
+	List<Persona> lp = context.getBean("listaPersonas", List.class); lp.add(p3); 
+	p3 = context.getBean("persona3", Persona.class); p3.getNombre(); p3.getEdad(); 
+	p3.getPeso(); p3.getDireccion(); System.out.println(p3.getDireccion()); -->
+	
+	
+	
+	

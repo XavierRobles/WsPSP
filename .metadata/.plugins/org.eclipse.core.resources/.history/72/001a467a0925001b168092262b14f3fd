@@ -1,0 +1,15 @@
+
+public class Arena {
+
+	private Personaje p1;
+	private Personaje p2;
+	
+	
+	public Arena(Personaje p1, Personaje p2) {
+		this.p1 = p1;
+		this.p2 = p2;
+		
+		
+	}
+	
+}

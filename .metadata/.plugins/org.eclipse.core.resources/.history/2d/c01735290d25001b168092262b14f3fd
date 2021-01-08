@@ -1,0 +1,36 @@
+
+public class MainPrincipal {
+
+	public static void main(String[] args) {
+
+		Personaje G1 = new Guerrero();
+		Personaje C1 = new Healer();
+		Arma e1 = new Espada();
+		Arma e2 = new Rezo();
+		Arma e3 = new Espada();
+		
+		
+		G1.setNombre("Akiles");
+		G1.setNivel(5);
+		G1.setSalud(200);
+		G1.setIniciativa(5);
+		G1.setArma(e1);
+		e1.setDañomaximo(20);
+		e1.setDañoMinimo(5);
+		
+		C1.setNombre("Akiles");
+		C1.setNivel(5);
+		C1.setSalud(200);
+		C1.setIniciativa(5);
+		C1.setArma(e1);
+		e2.setDañomaximo(20);
+		e2.setDañoMinimo(5);
+		
+		Arena combate = new Arena(G1, C1);
+		
+		Personaje Ganador = combate.combate();
+		System.out.println("Ganador es: "+Ganador);
+		
+	}
+
+}
