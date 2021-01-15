@@ -10,20 +10,26 @@ import com.uem.restbasicoJuego.entidad.Videojuego;
 public class ControlVideojuego {
 
 	
-	
-		private String precio = "30€";
+	Videojuego v = new Videojuego();
+		private int precio = 30;
 
 		@GetMapping("videojuego")
-		public String obtenerMensaje() {
+		public int obtenerMensaje() {
 			
 			return precio;
 		}
-
+	
+	
+		
 		// podemos mapear todos los recursos que queramos
 
 		@GetMapping(value = "juegoHTML", produces = "text/html")
 		public String obtenerMensajeHTML() {
 			StringBuffer buffer = new StringBuffer();
+			v.setId(1);
+			v.setNombre("GTA-V");
+			v.setPrecio(precio);
+			v.setCompañia("Rockstar");
 			buffer.append("<!DOCTYPE html>");
 			buffer.append("<html>");
 			buffer.append("<head>");
@@ -32,7 +38,10 @@ public class ControlVideojuego {
 			buffer.append("<body>");
 			buffer.append("<h1> Videojuego </h1>");
 			buffer.append("<img src='https://images-na.ssl-images-amazon.com/images/I/81Ow0EK3azL._AC_SL1500_.jpg'  style='width: 200px; height: 277px;'></img>");
-			buffer.append("<h1>"+precio+"<h1>");
+			buffer.append("<h1>ID: "+v.getId()+"</h1>");
+			buffer.append("<h1>Nombre: "+v.getNombre()+"</h1>");
+			buffer.append("<h1>Compañia: "+v.getCompañia()+"</h1>");	
+			buffer.append("<h1>Precio: "+v.getPrecio()+"$</h1>");
 			buffer.append("</body>");
 			buffer.append("</html>");
 			return buffer.toString();
@@ -40,19 +49,18 @@ public class ControlVideojuego {
 
 		@GetMapping("juego")
 		public Videojuego obtenerJuego() {
-			Videojuego v = new Videojuego();
 			v.setId(1);
 			v.setNombre("GTA-V");
 			v.setCompañia("Rockstar");
-			v.setPrecio(30);
+			
 			
 			return v;
 
 		}
 		@PutMapping("videojuego")
 		public String modificarMensaje() {
-			precio = "50€";
-					return "Precio aumentado";
+			 precio = v.getPrecio()+10;
+					return "Precio aumentado en 10€";
 		}
 	
 	

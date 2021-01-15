@@ -27,10 +27,6 @@ public class Videojuego {
 	public void setCompañia(String compañia) {
 		this.compañia = compañia;
 	}
-	@Override
-	public String toString() {
-		return "Videojuego [id=" + id + ", precio=" + precio + ", nombre=" + nombre + ", compañia=" + compañia + "]";
-	}
 	
 
 }
