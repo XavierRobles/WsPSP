@@ -46,17 +46,17 @@ public class ControlVideojuego {
 			buffer.append("</html>");
 			return buffer.toString();
 		}
-
-		@GetMapping("juego")
-		public Videojuego obtenerJuego() {
-			v.setId(1);
-			v.setNombre("GTA-V");
-			v.setCompañia("Rockstar");
-			
-			
-			return v;
-
-		}
+//
+//		@GetMapping("juego")
+//		public Videojuego obtenerJuego() {
+//			v.setId(1);
+//			v.setNombre("GTA-V");
+//			v.setCompañia("Rockstar");
+//			
+//			
+//			return v;
+//
+//		}
 		@PutMapping("videojuego")
 		public String modificarMensaje() {
 			 precio = v.getPrecio()+10;

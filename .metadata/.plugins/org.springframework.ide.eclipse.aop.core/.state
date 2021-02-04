@@ -2,6 +2,9 @@
 <aop-reference-model>
 <aop-project name="Videojuego1"/>
 <aop-project name="SprintJPADATARelaciones"/>
+<aop-project name="03_SpringRestBasico"/>
+<aop-project name="04_SpringRestNormalPersonas"/>
 <aop-project name="SpringJPAData"/>
 <aop-project name="SpringRestBasico"/>
+<aop-project name="SpringRestBasico-Juego"/>
 </aop-reference-model>
