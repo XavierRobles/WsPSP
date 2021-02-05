@@ -64,7 +64,7 @@ public class ControladorPersona {
 			codigoDeRespuesta = HttpStatus.CREATED;
 
 		} else {
-			codigoDeRespuesta = codigoDeRespuesta = HttpStatus.BAD_REQUEST;
+			codigoDeRespuesta = HttpStatus.BAD_REQUEST;
 		}
 		ResponseEntity<Persona> re = new ResponseEntity<Persona>(pAlta, codigoDeRespuesta);
 
@@ -82,7 +82,7 @@ public class ControladorPersona {
 			codigoDeRespuesta = HttpStatus.OK;
 
 		} else {
-			codigoDeRespuesta = codigoDeRespuesta = HttpStatus.BAD_REQUEST;
+			codigoDeRespuesta = HttpStatus.BAD_REQUEST;
 		}
 		ResponseEntity<Persona> re = new ResponseEntity<Persona>(pModificar, codigoDeRespuesta);
 

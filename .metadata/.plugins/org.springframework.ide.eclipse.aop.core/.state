@@ -7,4 +7,6 @@
 <aop-project name="SpringJPAData"/>
 <aop-project name="SpringRestBasico"/>
 <aop-project name="SpringRestBasico-Juego"/>
+<aop-project name="04_SpringRestPersona"/>
+<aop-project name="05_Ejercicio_Concesionario"/>
 </aop-reference-model>
