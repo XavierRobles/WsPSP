@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
+<aop-project name="05_Ejercicio_ConcesionarioTemplate"/>
 <aop-project name="Videojuego1"/>
 <aop-project name="SprintJPADATARelaciones"/>
+<aop-project name="04_SpringRestPersona"/>
+<aop-project name="05_RestTemplate_Concesionario"/>
 <aop-project name="03_SpringRestBasico"/>
 <aop-project name="04_SpringRestNormalPersonas"/>
 <aop-project name="SpringJPAData"/>
 <aop-project name="SpringRestBasico"/>
+<aop-project name="PruebaRestExamenBasico"/>
 <aop-project name="SpringRestBasico-Juego"/>
-<aop-project name="04_SpringRestPersona"/>
 <aop-project name="05_Ejercicio_Concesionario"/>
+<aop-project name="05_RestTemplate"/>
 </aop-reference-model>

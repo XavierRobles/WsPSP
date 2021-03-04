@@ -1,0 +1,13 @@
+package com.pruebaexamen;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class PruebaRestExamenBasicoApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

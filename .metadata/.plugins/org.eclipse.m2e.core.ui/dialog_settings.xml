@@ -2,11 +2,15 @@
 <section name="Workbench">
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="WebScrappingAmazonMoviles"/>
+			<item value="WebScrapping"/>
 			<item value="Videojuego"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="WebScrappingAmazonMoviles"/>
+			<item value="WebScrapping"/>
 			<item value="Videojuego"/>
 		</list>
 		<list key="version">
