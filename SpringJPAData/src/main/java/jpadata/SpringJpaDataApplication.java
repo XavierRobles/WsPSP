@@ -19,7 +19,7 @@ public static ApplicationContext context = null;
 		Pelicula p = new Pelicula();
 		p.setTitulo("Star Wars");
 		p.setDirector("George Lucas");
-		p.setAnio(1980);
+		p.setAnio(1982);
 		
 		DaoPelicula dao = context.getBean("daoPelicula" , DaoPelicula.class);
 //		dao.save(p);
